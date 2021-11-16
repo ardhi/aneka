@@ -1,6 +1,6 @@
 {
   "name": "aneka",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "cemacemla",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/ardhi/aneka#readme",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "axios": "^0.24.0",
+    "lodash": "^4.17.21",
+    "query-string": "^7.0.1"
   }
 }

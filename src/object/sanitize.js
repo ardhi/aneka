@@ -1,4 +1,4 @@
-import { forOwn } from 'lodash'
+const { forOwn } = require('lodash')
 
 module.exports = function(params) {
   const result = {}
