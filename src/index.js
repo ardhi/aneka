@@ -29,6 +29,7 @@ module.exports = {
   fetchUrl: require('./misc/fetch-url'),
   isSet: require('./misc/is-set'),
   print: require('./misc/print'),
+  parseBool: require('./misc/parse-bool'),
   // object
   sanitizeObject: require('./object/sanitize')
 }
