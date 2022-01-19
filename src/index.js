@@ -30,6 +30,7 @@ module.exports = {
   isSet: require('./misc/is-set'),
   print: require('./misc/print'),
   parseBool: require('./misc/parse-bool'),
+  dump: require('./misc/dump'),
   // object
   sanitizeObject: require('./object/sanitize')
 }
