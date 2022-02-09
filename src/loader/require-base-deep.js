@@ -18,7 +18,7 @@ module.exports = async function (dir, transformer, options = {}) {
     if (filter(strippeds, f => f === stripped).length > 1) throw new (`File '${stripped}.{json,js}' already used`)
     try {
       let mod = require(file)
-      if (isFunction(mod)) mod = await mod(options.module)
+      if (isFunction(mod)) mod = await mod.call(options.scope)
       result.push(await transformer(file, mod, options.transformer))
     } catch (err) {
       throw err
