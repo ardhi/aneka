@@ -1,6 +1,6 @@
 {
   "name": "aneka",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "cemacemla",
   "main": "src/index.js",
   "scripts": {

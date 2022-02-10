@@ -31,6 +31,7 @@ module.exports = {
   print: require('./misc/print'),
   parseBool: require('./misc/parse-bool'),
   dump: require('./misc/dump'),
+  setImmediatePromise: require('./misc/set-immediate-promise'),
   // object
   sanitizeObject: require('./object/sanitize')
 }
