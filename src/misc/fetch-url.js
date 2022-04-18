@@ -3,6 +3,7 @@ const { has, isString, omit } = require('lodash')
 const qs = require('query-string')
 
 const handleSuccess = (resp, opts, cfg) => {
+  if (cfg.raw) return resp
   return resp.data
 }
 
