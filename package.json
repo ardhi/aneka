@@ -1,6 +1,6 @@
 {
   "name": "aneka",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "cemacemla",
   "main": "src/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "fast-glob": "^3.2.7",
     "global-dirs": "^3.0.0",
     "lodash": "^4.17.21",
-    "query-string": "^7.0.1"
+    "query-string": "^7.0.1",
+    "worker-timers": "^7.0.63"
   }
 }
