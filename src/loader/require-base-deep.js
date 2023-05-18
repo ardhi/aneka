@@ -13,12 +13,13 @@ module.exports = async function (dir, transformer, options = {}) {
   const files = await fg(dir + '/*.{json,js}', options.glob)
   const strippeds = map(files, f => stripExt(f))
   const result = []
+  const me = this
   for (const file of files) {
     const stripped = stripExt(file)
     if (filter(strippeds, f => f === stripped).length > 1) throw new (`File '${stripped}.{json,js}' already used`)
     try {
       let mod = require(file)
-      if (isFunction(mod)) mod = await mod.call(options.scope)
+      if (isFunction(mod)) mod = await mod.call(me, options)
       result.push(await transformer(file, mod, options.transformer))
     } catch (err) {
       throw err

@@ -4,9 +4,10 @@ const pathResolve = require('../fs/path-resolve')
 
 module.exports = async function (file, options) {
   const parsed = path.parse(pathResolve(file))
+  const me = this
   try {
     const mod = require(parsed.dir + '/' + parsed.name + '.js')
-    if (isFunction(mod)) return await mod(options)
+    if (isFunction(mod)) return await mod.call(me, options)
     return mod
   } catch (err) {
     try {
