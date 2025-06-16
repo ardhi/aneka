@@ -1,6 +1,6 @@
 {
   "name": "aneka",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "cemacemla",
   "main": "src/index.js",
   "type": "module",
@@ -13,6 +13,7 @@
   },
   "keywords": [
     "aneka",
+    "miscellaneous",
     "functions"
   ],
   "author": "Ardhi Lukianto <ardhi.lukianto@gmail.com>",
