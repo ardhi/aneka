@@ -1,8 +1,9 @@
 {
   "name": "aneka",
-  "version": "0.0.25",
+  "version": "0.1.1",
   "description": "cemacemla",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
@@ -14,18 +15,14 @@
     "aneka",
     "functions"
   ],
-  "author": "Ardhi Lukianto <ardhi@lukianto.com>",
+  "author": "Ardhi Lukianto <ardhi.lukianto@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ardhi/aneka/issues"
   },
   "homepage": "https://github.com/ardhi/aneka#readme",
   "dependencies": {
-    "axios": "^0.24.0",
-    "fast-glob": "^3.2.7",
-    "global-dirs": "^3.0.0",
-    "lodash": "^4.17.21",
-    "query-string": "^7.0.1",
-    "worker-timers": "^7.0.63"
+    "lodash-es": "^4.17.21",
+    "sprintf-js": "^1.1.3"
   }
 }
