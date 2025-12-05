@@ -3,6 +3,7 @@ import defaultsDeep from './src/defaults-deep.js'
 import delay from './src/delay.js'
 import extractText from './src/extract-text.js'
 import getKeyByValue from './src/get-key-by-value.js'
+import getIndex from './src/get-index.js'
 import includes from './src/includes.js'
 import isClass from './src/is-class.js'
 import isSet from './src/is-set.js'
@@ -18,6 +19,7 @@ export default {
   defaultsDeep,
   delay,
   extractText,
+  getIndex,
   getKeyByValue,
   includes,
   isClass,
