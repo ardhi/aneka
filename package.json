@@ -1,7 +1,7 @@
 {
   "name": "aneka",
-  "version": "0.1.4",
-  "description": "cemacemla",
+  "version": "0.2.0",
+  "description": "Some usefull function helper for daily use",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
