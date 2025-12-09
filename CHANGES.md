@@ -2,7 +2,7 @@
 
 ## 2025-12-09
 
-- [0.2.2] Bug fix on ```getIndex()```
+- [0.2.3] Bug fix on ```getIndex()```
 
 ## 2025-12-05
 
