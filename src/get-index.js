@@ -4,3 +4,5 @@ function getIndex (inputs = [], matcher) {
     return null
   }).filter(val => val !== null)
 }
+
+export default getIndex
