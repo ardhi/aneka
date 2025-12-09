@@ -2,7 +2,7 @@
   "name": "aneka",
   "version": "0.2.2",
   "description": "Some usefull function helper for daily use",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "jest"
