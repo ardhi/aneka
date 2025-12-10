@@ -1,5 +1,9 @@
 # Changes
 
+## 2025-12-10
+
+- [0.2.4] Add ```filterIndex(inputs, matcher)```
+
 ## 2025-12-09
 
 - [0.2.3] Bug fix on ```getIndex()```

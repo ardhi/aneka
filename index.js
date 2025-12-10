@@ -19,6 +19,7 @@ export default {
   defaultsDeep,
   delay,
   extractText,
+  filterIndex,
   getIndex,
   getKeyByValue,
   includes,
