@@ -2,6 +2,7 @@ import arrangeArray from './src/arrange-array.js'
 import defaultsDeep from './src/defaults-deep.js'
 import delay from './src/delay.js'
 import extractText from './src/extract-text.js'
+import filterDuplicate from './src/filter-duplicate.js'
 import filterIndex from './src/filter-index.js'
 import getKeyByValue from './src/get-key-by-value.js'
 import getIndex from './src/get-index.js'
@@ -20,6 +21,7 @@ export default {
   defaultsDeep,
   delay,
   extractText,
+  filterDuplicate,
   filterIndex,
   getIndex,
   getKeyByValue,

@@ -3,6 +3,8 @@
 ## 2025-12-10
 
 - [0.3.0] Add ```filterIndex(inputs, matcher)```
+- [0.4.0] Add ```filterDuplicate(inputs, key)```
+- [0.4.0] Add some test with mocha & chai
 
 ## 2025-12-09
 
