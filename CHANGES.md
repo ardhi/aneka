@@ -1,5 +1,9 @@
 # Changes
 
+## 2025-12-11
+
+- [0.5.0] Add ```mergeObjectsByKey(inputs, key)```
+
 ## 2025-12-10
 
 - [0.3.0] Add ```filterIndex(inputs, matcher)```

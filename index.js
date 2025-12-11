@@ -15,6 +15,7 @@ import pascalCase from './src/pascal-case.js'
 import round from './src/round.js'
 import secToHms from './src/sec-to-hms.js'
 import titleize from './src/titleize.js'
+import mergeObjectsByKey from './src/merge-objects-by-key.js'
 
 export default {
   arrangeArray,
@@ -30,6 +31,7 @@ export default {
   isSet,
   log,
   logError,
+  mergeObjectsByKey,
   paginate,
   pascalCase,
   round,
