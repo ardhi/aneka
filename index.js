@@ -17,7 +17,7 @@ import secToHms from './src/sec-to-hms.js'
 import titleize from './src/titleize.js'
 import mergeObjectsByKey from './src/merge-objects-by-key.js'
 
-export default {
+export const items = {
   arrangeArray,
   defaultsDeep,
   delay,
@@ -38,3 +38,5 @@ export default {
   secToHms,
   titleize
 }
+
+export default items

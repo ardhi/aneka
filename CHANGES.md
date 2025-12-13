@@ -1,5 +1,9 @@
 # Changes
 
+## 2025-12-13
+
+- [0.6.0] Export functions as named export as well as default export
+
 ## 2025-12-11
 
 - [0.5.0] Add ```mergeObjectsByKey(inputs, key)```
