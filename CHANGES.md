@@ -14,6 +14,8 @@
 - [0.7.2] Bug fix in ```parseArgsArgv()```
 - [0.7.3] Rewrite options in ```parseObject()```
 - [0.7.4] Bug fix in ```parseObject()```
+- [0.8.0] Add ```randomRange()```
+- [0.8.0] Add ```generateId()```
 
 ## 2025-12-11
 
