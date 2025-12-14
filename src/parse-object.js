@@ -1,4 +1,3 @@
-import { parseObject } from '../index.js'
 import isSet from './is-set.js'
 import parseDuration from './parse-duration.js'
 import dotenvParseVariables from 'dotenv-parse-variables'
@@ -15,12 +14,13 @@ import { set, isString, cloneDeep, isPlainObject, isArray, omit } from 'lodash-e
  * @param {Object} [options={}] - Options
  * @param {boolean} [options.silent=true] - If ```true``` (default), exception are not thrown and silently ignored
  * @param {boolean} [options.parseValue=false] - If ```true```, values will be parsed & normalized
- * @param {function(string): string} [options.translator] - If provided, translate string value with this function
+ * @param {Object} [options.translator] - If provided, translate string value
  * @returns {Object}
  * @see {@link https://github.com/ladjs/dotenv-parse-variables}
  */
 function parseObject (input, options = {}) {
-  const { silent = true, parseValue = false, translate } = options
+  const { silent = true, parseValue = false, translator = {} } = options
+  const { prefix, lang, handler } = translator
   const statics = ['*']
   if (isString(input)) {
     try {
@@ -44,12 +44,12 @@ function parseObject (input, options = {}) {
         if (isArray(obj[k][idx])) obj[k][idx] = obj[k][idx].map(item => typeof item === 'string' ? item.trim() : item)
       })
     } else if (isSet(v)) {
-      if (isString(v) && translate) v = translate(v.slice(2))
+      if (isString(v) && prefix && lang && handler && v.startsWith(prefix)) v = handler(v.slice(prefix.length))
       try {
         if (statics.includes(v)) obj[k] = v
-        else if (k.startsWith('t:') && isString(v)) {
-          const newK = k.slice(2)
-          if (translate) obj[newK] = translate(v)
+        else if (isString(v) && prefix && handler && k.startsWith(prefix)) {
+          const newK = k.slice(prefix.length)
+          if (lang) obj[newK] = handler(v)
           else obj[newK] = v
           mutated.push(k)
         } else if (parseValue) {

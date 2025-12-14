@@ -26,7 +26,7 @@ async function parseWithParser () {
 }
 
 async function parseWithYargs () {
-  const pkgFile = `${process.cwd}/package.json`
+  const pkgFile = `${process.cwd()}/package.json`
   const pkg = JSON.parse(fs.readFileSync(pkgFile, 'utf8'))
   let name = `node ${pkg.main}`
   if (pkg.bin) name = path.basename(pkg.bin, '.js')
