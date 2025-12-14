@@ -25,6 +25,8 @@ import parseArgsArgv from './src/parse-args-argv.js'
 import parseEnv from './src/parse-env.js'
 import parseDuration from './src/parse-duration.js'
 import parseObject from './src/parse-object.js'
+import randomRange from './src/random-range.js'
+import generateId from './src/generate-id.js'
 
 export {
   arrangeArray,
@@ -35,6 +37,7 @@ export {
   formatText,
   filterDuplicate,
   filterIndex,
+  generateId,
   getIndex,
   getKeyByValue,
   includes,
@@ -49,6 +52,7 @@ export {
   parseEnv,
   parseObject,
   pascalCase,
+  randomRange,
   resolvePath,
   round,
   secToHms,
@@ -66,6 +70,7 @@ export default {
   formatText,
   filterDuplicate,
   filterIndex,
+  generateId,
   getIndex,
   getKeyByValue,
   includes,
@@ -80,6 +85,7 @@ export default {
   parseEnv,
   parseObject,
   pascalCase,
+  randomRange,
   resolvePath,
   round,
   secToHms,
