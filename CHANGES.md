@@ -9,6 +9,7 @@
 - [0.6.0] Add ```parseEnv()```
 - [0.6.0] Add ```parseArgsArgv()```
 - [0.6.0] Add ```parseDuration()```
+- [0.7.0] Add ```parseObject()```
 
 ## 2025-12-11
 

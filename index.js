@@ -24,6 +24,7 @@ import currentLoc from './src/current-loc.js'
 import parseArgsArgv from './src/parse-args-argv.js'
 import parseEnv from './src/parse-env.js'
 import parseDuration from './src/parse-duration.js'
+import parseObject from './src/parse-object.js'
 
 export {
   arrangeArray,
@@ -46,6 +47,7 @@ export {
   parseArgsArgv,
   parseDuration,
   parseEnv,
+  parseObject,
   pascalCase,
   resolvePath,
   round,
@@ -76,6 +78,7 @@ export default {
   parseArgsArgv,
   parseDuration,
   parseEnv,
+  parseObject,
   pascalCase,
   resolvePath,
   round,
