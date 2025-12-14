@@ -14,14 +14,24 @@ import paginate from './src/paginate.js'
 import pascalCase from './src/pascal-case.js'
 import round from './src/round.js'
 import secToHms from './src/sec-to-hms.js'
+import setImmediate from './src/set-immediate.js'
 import titleize from './src/titleize.js'
 import mergeObjectsByKey from './src/merge-objects-by-key.js'
+import formatText from './src/format-text.js'
+import resolvePath from './src/resolve-path.js'
+import shim from './src/shim.js'
+import currentLoc from './src/current-loc.js'
+import parseArgsArgv from './src/parse-args-argv.js'
+import parseEnv from './src/parse-env.js'
+import parseDuration from './src/parse-duration.js'
 
-export const items = {
+export {
   arrangeArray,
+  currentLoc,
   defaultsDeep,
   delay,
   extractText,
+  formatText,
   filterDuplicate,
   filterIndex,
   getIndex,
@@ -33,10 +43,43 @@ export const items = {
   logError,
   mergeObjectsByKey,
   paginate,
+  parseArgsArgv,
+  parseDuration,
+  parseEnv,
   pascalCase,
+  resolvePath,
   round,
   secToHms,
+  setImmediate,
+  shim,
   titleize
 }
 
-export default items
+export default {
+  arrangeArray,
+  currentLoc,
+  defaultsDeep,
+  delay,
+  extractText,
+  formatText,
+  filterDuplicate,
+  filterIndex,
+  getIndex,
+  getKeyByValue,
+  includes,
+  isClass,
+  isSet,
+  log,
+  logError,
+  mergeObjectsByKey,
+  paginate,
+  parseArgsArgv,
+  parseDuration,
+  parseEnv,
+  pascalCase,
+  resolvePath,
+  round,
+  secToHms,
+  shim,
+  titleize
+}

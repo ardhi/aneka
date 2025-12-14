@@ -23,8 +23,13 @@
   },
   "homepage": "https://github.com/ardhi/aneka#readme",
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "dotenv-parse-variables": "^2.0.0",
+    "flat": "^6.0.1",
     "lodash-es": "^4.17.21",
-    "sprintf-js": "^1.1.3"
+    "ms": "^2.1.3",
+    "sprintf-js": "^1.1.3",
+    "yargs": "^18.0.0"
   },
   "devDependencies": {
     "chai": "^6.2.1",

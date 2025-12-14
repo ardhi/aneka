@@ -3,6 +3,12 @@
 ## 2025-12-13
 
 - [0.6.0] Export functions as named export as well as default export
+- [0.6.0] Add ```setImmediate()```
+- [0.6.0] Add ```formatText()```
+- [0.6.0] Add ```resolvePath()```
+- [0.6.0] Add ```parseEnv()```
+- [0.6.0] Add ```parseArgsArgv()```
+- [0.6.0] Add ```parseDuration()```
 
 ## 2025-12-11
 
