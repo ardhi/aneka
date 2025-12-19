@@ -27,6 +27,7 @@ import parseDuration from './src/parse-duration.js'
 import parseObject from './src/parse-object.js'
 import randomRange from './src/random-range.js'
 import generateId from './src/generate-id.js'
+import fillObject from './src/fill-object.js'
 
 export {
   arrangeArray,
@@ -35,6 +36,7 @@ export {
   delay,
   extractText,
   formatText,
+  fillObject,
   filterDuplicate,
   filterIndex,
   generateId,
@@ -68,6 +70,7 @@ export default {
   delay,
   extractText,
   formatText,
+  fillObject,
   filterDuplicate,
   filterIndex,
   generateId,

@@ -1,5 +1,9 @@
 # Changes
 
+## 2025-12-19
+
+- [0.9.0] Add ```fillObject()```
+
 ## 2025-12-13
 
 - [0.6.0] Export functions as named export as well as default export
