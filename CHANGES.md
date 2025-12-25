@@ -1,5 +1,9 @@
 # Changes
 
+## 2025-12-25
+
+- [0.10.0] Add ```parseKvString()```
+
 ## 2025-12-19
 
 - [0.9.0] Add ```fillObject()```

@@ -1,6 +1,6 @@
 {
   "name": "aneka",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Some usefull function helper for daily use",
   "main": "index.js",
   "type": "module",
@@ -20,6 +20,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ardhi/aneka/issues"
+  },
+  "standard": {
+    "env": [ "mocha" ]
   },
   "homepage": "https://github.com/ardhi/aneka#readme",
   "dependencies": {

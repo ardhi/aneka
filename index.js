@@ -28,6 +28,7 @@ import parseObject from './src/parse-object.js'
 import randomRange from './src/random-range.js'
 import generateId from './src/generate-id.js'
 import fillObject from './src/fill-object.js'
+import parseKvString from './src/parse-kv-string.js'
 
 export {
   arrangeArray,
@@ -52,6 +53,7 @@ export {
   parseArgsArgv,
   parseDuration,
   parseEnv,
+  parseKvString,
   parseObject,
   pascalCase,
   randomRange,
@@ -86,6 +88,7 @@ export default {
   parseArgsArgv,
   parseDuration,
   parseEnv,
+  parseKvString,
   parseObject,
   pascalCase,
   randomRange,
