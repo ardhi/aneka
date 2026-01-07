@@ -1,4 +1,4 @@
-function mergeObjectsByKey(inputs, key) {
+function mergeObjectsByKey (inputs, key) {
   const uniqueMap = new Map()
 
   for (const item of inputs) {
