@@ -1,5 +1,9 @@
 # Changes
 
+## 2026-01-18
+
+- [0.11.0] ```parseArgsArgv()``` now accepts a third parameter to set the current working directory
+
 ## 2025-12-25
 
 - [0.10.0] Add ```parseKvString()```

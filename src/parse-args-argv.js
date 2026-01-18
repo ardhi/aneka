@@ -25,8 +25,8 @@ async function parseWithParser () {
   })
 }
 
-async function parseWithYargs () {
-  const pkgFile = `${process.cwd()}/package.json`
+async function parseWithYargs (cwd) {
+  const pkgFile = `${cwd ?? process.cwd()}/package.json`
   const pkg = JSON.parse(fs.readFileSync(pkgFile, 'utf8'))
   let name = `node ${pkg.main}`
   if (pkg.bin) name = path.basename(pkg.bin, '.js')
@@ -52,13 +52,14 @@ async function parseWithYargs () {
  * @async
  * @param {function(Object): Object} [sanitizer] - If provided, result will be sanitized with this function
  * @param {boolean} [useParser] - If ```true```, skip {@link https://github.com/yargs/yargs|yargs}
+ * @param {string} [cwd] - If provided, current working directory is set to this
  * @returns {{args: Array, argv: Object}} An object containing ```args``` and ```argv```
  * @see App#args
  * @see App#argv
  */
-async function parseArgsArgv (sanitizer, useParser) {
+async function parseArgsArgv (sanitizer, useParser, cwd) {
   if (!useParser) useParser = find(process.argv, a => a.startsWith('--spawn'))
-  let argv = useParser ? await parseWithParser.call() : await parseWithYargs.call()
+  let argv = useParser ? await parseWithParser() : await parseWithYargs(cwd)
   const args = argv._
   delete argv._
   delete argv.$0
