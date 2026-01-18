@@ -2,7 +2,8 @@
 
 ## 2026-01-18
 
-- [0.11.0] ```parseArgsArgv()``` now accepts a third parameter to set the current working directory
+- [0.11.1] ```parseArgsArgv()``` now accepts an object as its parameter
+
 
 ## 2025-12-25
 

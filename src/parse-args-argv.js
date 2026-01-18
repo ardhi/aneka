@@ -50,14 +50,16 @@ async function parseWithYargs (cwd) {
  * Parse program arguments (args) & options (argv)
  *
  * @async
- * @param {function(Object): Object} [sanitizer] - If provided, result will be sanitized with this function
- * @param {boolean} [useParser] - If ```true```, skip {@link https://github.com/yargs/yargs|yargs}
- * @param {string} [cwd] - If provided, current working directory is set to this
+ * @param {Object} [options={}] - Options object
+ * @param {function(Object): Object} [options.sanitizer] - If provided, result will be sanitized with this function
+ * @param {boolean} [options.useParser] - If ```true```, skip {@link https://github.com/yargs/yargs|yargs}
+ * @param {string} [options.cwd] - If provided, current working directory is set to this
  * @returns {{args: Array, argv: Object}} An object containing ```args``` and ```argv```
  * @see App#args
  * @see App#argv
  */
-async function parseArgsArgv (sanitizer, useParser, cwd) {
+async function parseArgsArgv (options = {}) {
+  let { sanitizer, useParser, cwd } = options
   if (!useParser) useParser = find(process.argv, a => a.startsWith('--spawn'))
   let argv = useParser ? await parseWithParser() : await parseWithYargs(cwd)
   const args = argv._
