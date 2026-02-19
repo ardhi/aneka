@@ -1,9 +1,12 @@
 # Changes
 
+## 2026-02-20
+
+- [0.12.0] Add ```without()```
+
 ## 2026-01-18
 
 - [0.11.1] ```parseArgsArgv()``` now accepts an object as its parameter
-
 
 ## 2025-12-25
 

@@ -29,6 +29,7 @@ import randomRange from './src/random-range.js'
 import generateId from './src/generate-id.js'
 import fillObject from './src/fill-object.js'
 import parseKvString from './src/parse-kv-string.js'
+import without from './src/without.js'
 
 export {
   arrangeArray,
@@ -62,7 +63,8 @@ export {
   secToHms,
   setImmediate,
   shim,
-  titleize
+  titleize,
+  without
 }
 
 export default {
@@ -96,5 +98,6 @@ export default {
   round,
   secToHms,
   shim,
-  titleize
+  titleize,
+  without
 }
