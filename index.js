@@ -30,6 +30,7 @@ import generateId from './src/generate-id.js'
 import fillObject from './src/fill-object.js'
 import parseKvString from './src/parse-kv-string.js'
 import without from './src/without.js'
+import textToArray from './src/text-to-array.js'
 
 export {
   arrangeArray,
@@ -63,6 +64,7 @@ export {
   secToHms,
   setImmediate,
   shim,
+  textToArray,
   titleize,
   without
 }
@@ -98,6 +100,7 @@ export default {
   round,
   secToHms,
   shim,
+  textToArray,
   titleize,
   without
 }

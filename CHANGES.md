@@ -1,5 +1,10 @@
 # Changes
 
+## 2026-03-10
+
+- [0.13.0] Add ```textToArray```
+- [0.13.1] Bug fix in ```index.js```
+
 ## 2026-02-20
 
 - [0.12.0] Add ```without()```
