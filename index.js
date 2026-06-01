@@ -31,6 +31,7 @@ import fillObject from './src/fill-object.js'
 import parseKvString from './src/parse-kv-string.js'
 import without from './src/without.js'
 import textToArray from './src/text-to-array.js'
+import getCallerFilename from './src/get-caller-filename.js'
 
 export {
   arrangeArray,
@@ -43,6 +44,7 @@ export {
   filterDuplicate,
   filterIndex,
   generateId,
+  getCallerFilename,
   getIndex,
   getKeyByValue,
   includes,
@@ -80,6 +82,7 @@ export default {
   filterDuplicate,
   filterIndex,
   generateId,
+  getCallerFilename,
   getIndex,
   getKeyByValue,
   includes,

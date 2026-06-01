@@ -1,5 +1,9 @@
 # Changes
 
+## 2026-06-01
+
+- [0.14.0] Add ```getCallerFilename```
+
 ## 2026-03-10
 
 - [0.13.0] Add ```textToArray```
