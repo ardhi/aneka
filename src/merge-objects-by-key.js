@@ -1,3 +1,10 @@
+/**
+ * Merges objects by a shared key, where later objects override earlier fields.
+ *
+ * @param {Array<Object>} inputs Source objects.
+ * @param {string} key Field name used for grouping.
+ * @returns {Array<Object>} Merged objects.
+ */
 function mergeObjectsByKey (inputs, key) {
   const uniqueMap = new Map()
 

@@ -1,0 +1,39 @@
+{
+  "plugins": ["plugins/markdown", "jsdoc-plugin-intersection"],
+  "opts": {
+    "encoding": "utf8",
+    "recurse": true,
+    "verbose": true,
+    "destination": "./docs",
+    "template": "node_modules/clean-jsdoc-theme",
+    "readme": "./README.md",
+    "theme_opts": {
+      "default_theme": "light",
+      "display-module-header": true,
+      "title": "aneka",
+      "homepageTitle": "aneka",
+      "sections": ["Classes", "Events", "Modules", "Global"],
+      "menu": [{
+        "title": "NPM",
+        "link": "https://www.npmjs.com/package/aneka"
+      }, {
+        "title": "Github",
+        "link": "https://github.com/ardhi/aneka"
+      }]
+    }
+  },
+  "source": {
+    "include": ["."],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "exclude": ["node_modules", "docs", "test"]
+  },
+  "markdown": {
+    "hardwrap": false,
+    "idInHeadings": true
+  },
+  "sourceType": "module",
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
+}

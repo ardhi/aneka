@@ -1,10 +1,10 @@
 /**
- * Generate random value
+ * Generate random value.
  *
- * @param {number} min - Minimum value (inclusive)
- * @param {number} max - Maximum value (inclusive)
- * @param {boolean} alpha - Set ```true``` to return alphanumeric characters
- * @returns
+ * @param {number} min Minimum value (inclusive).
+ * @param {number} max Maximum value (inclusive).
+ * @param {boolean} alpha Set ```true``` to return alphanumeric characters.
+ * @returns {number|string} Random value.
  */
 function randomRange (min = 0, max = 65439, alpha = false) {
   const num = Math.floor(Math.random() * (max - min + 1) + min)

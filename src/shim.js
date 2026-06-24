@@ -1,10 +1,8 @@
 /**
- * Function to attach some of the methods needed but probably not provided by your node installation:
+ * Attaches missing String polyfills when they are not available in the current runtime.
+ * Adds `String.prototype.replaceAll` and `String.prototype.splice` if needed.
  *
- * - ```String.prototype.replaceAll```
- * - ```String.prototype.splice```
- *
- * @memberof module:Lib
+ * @returns {void}
  */
 function shim () {
   // taken from: https://vanillajstoolkit.com/polyfills/stringreplaceall/

@@ -6,8 +6,8 @@ import os from 'os'
  * Resolve file name to filesystem's path. Windows path separator ```\```
  * is normalized to Unix's ```/```
  *
- * @param {string} file - File to resolve
- * @param {boolean} [asFileUrl=false] - Return as file URL format ```file:///<name>```
+ * @param {string} file - File to resolve.
+ * @param {boolean} [asFileUrl=false] - Return as file URL format ```file:///<name>```.
  * @returns {string}
  */
 function resolvePath (item, asFileUrl) {

@@ -1,24 +1,19 @@
+/* eslint-env mocha */
 import { expect } from 'chai'
 import fn from '../src/filter-duplicate.js'
 
 describe('filterDuplicate', function () {
-  it('No duplication', function () {
-    const items = [
-      { id: 1, name: 'one' },
-      { id: 2, name: 'two' },
-      { id: 3, name: 'three' }
-    ]
-    const dups = fn(items, 'name')
-    expect(dups).to.have.lengthOf(0)
+  it('returns duplicated object entries', function () {
+    const rows = [{ n: 'a' }, { n: 'b' }, { n: 'a' }]
+    expect(fn(rows, 'n')).to.deep.equal([{ n: 'a' }, { n: 'a' }])
   })
 
-  it('Two duplications', function () {
-    const items = [
-      { id: 1, name: 'one' },
-      { id: 2, name: 'one' },
-      { id: 3, name: 'three' }
-    ]
-    const dups = fn(items, 'name')
-    expect(dups).to.have.lengthOf(2)
+  it('returns empty array when no duplication exists', function () {
+    expect(fn([{ n: 'a' }, { n: 'b' }], 'n')).to.deep.equal([])
+  })
+
+  it('returns all entries participating in duplicated keys', function () {
+    const rows = [{ n: 'a' }, { n: 'b' }, { n: 'a' }, { n: 'b' }]
+    expect(fn(rows, 'n')).to.deep.equal(rows)
   })
 })

@@ -1,24 +1,17 @@
+/* eslint-env mocha */
 import { expect } from 'chai'
 import fn from '../src/filter-index.js'
 
 describe('filterIndex', function () {
-  it('Nothing found', function () {
-    const items = [
-      { id: 1, name: 'one' },
-      { id: 2, name: 'two' },
-      { id: 3, name: 'three' }
-    ]
-    const dups = fn(items, item => item.name === 'zero')
-    expect(dups).to.have.lengthOf(0)
+  it('returns indexes matching predicate', function () {
+    expect(fn([1, 2, 3, 4], n => n % 2 === 0)).to.deep.equal([1, 3])
   })
 
-  it('Found 2 items', function () {
-    const items = [
-      { id: 1, name: 'one' },
-      { id: 2, name: 'two' },
-      { id: 3, name: 'three' }
-    ]
-    const dups = fn(items, item => ['one', 'two'].includes(item.name))
-    expect(dups).to.eql([0, 1])
+  it('returns empty array when no items match', function () {
+    expect(fn([1, 3, 5], n => n % 2 === 0)).to.deep.equal([])
+  })
+
+  it('returns all indexes when all items match', function () {
+    expect(fn([2, 4], n => n % 2 === 0)).to.deep.equal([0, 1])
   })
 })

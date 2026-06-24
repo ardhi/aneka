@@ -1,5 +1,12 @@
 import padStart from 'lodash-es/padStart.js'
 
+/**
+ * Converts seconds (or milliseconds) to HH:MM:SS string.
+ *
+ * @param {number|string} secs Duration value.
+ * @param {boolean} [ms] Treat input as milliseconds when true.
+ * @returns {string} Formatted duration.
+ */
 export default function secToHms (secs, ms) {
   let remain
   if (ms) {

@@ -4,18 +4,23 @@ import dotenvParseVariables from 'dotenv-parse-variables'
 import { set, isString, cloneDeep, isPlainObject, isArray, omit } from 'lodash-es'
 
 /**
- * Parse an object and optionally normalize its values recursively. Use {@link https://github.com/ladjs/dotenv-parse-variables}
- * to parse values, so please have a visit to know how it works
+ * Parses an object (or JSON string) and recursively normalizes nested values.
  *
- * If ```options.parseValue``` is ```true```, any key ends with ```Dur``` and ```Dt``` will
- * also be parsed as millisecond and Javascript date time accordingly.
+ * When `options.parseValue` is enabled, string values are converted using
+ * dotenv-parse-variables rules (for example booleans, numbers, arrays, and null),
+ * including values inside arrays and nested objects.
  *
- * @param {(Object|string)} input - If string is given, parse it first using JSON.parse
- * @param {Object} [options={}] - Options
- * @param {boolean} [options.silent=true] - If ```true``` (default), exception are not thrown and silently ignored
- * @param {boolean} [options.parseValue=false] - If ```true```, values will be parsed & normalized
- * @param {Object} [options.translator] - If provided, translate string value
- * @returns {Object}
+ * Special key handling:
+ * - Keys ending with `Dur` are converted to milliseconds using parseDuration.
+ * - Keys ending with `Dt` are converted to Unix timestamps using Date.parse.
+ * - `options.translator` can translate prefixed keys/values before normalization.
+ *
+ * @param {(Object|string)} input If string is given, parse it first using JSON.parse.
+ * @param {Object} [options={}] Options.
+ * @param {boolean} [options.silent=true] If `true`, parsing errors are ignored and values become undefined.
+ * @param {boolean} [options.parseValue=false] If `true`, values are parsed and normalized.
+ * @param {Object} [options.translator] Optional translator config for prefixed keys/values.
+ * @returns {Object} Parsed and normalized object.
  * @see {@link https://github.com/ladjs/dotenv-parse-variables}
  */
 function parseObject (input, options = {}) {

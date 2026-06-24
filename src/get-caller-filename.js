@@ -1,3 +1,8 @@
+/**
+ * Returns the caller file path from the current stack trace.
+ *
+ * @returns {string|undefined} Caller file path.
+ */
 function getCallerFilename () {
   const originalFunc = Error.prepareStackTrace
   let callerfile

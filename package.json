@@ -1,10 +1,11 @@
 {
   "name": "aneka",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Some usefull function helper for daily use",
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build-doc": "jsdoc -c .jsdoc.conf.json",
     "test": "mocha"
   },
   "repository": {
@@ -22,7 +23,9 @@
     "url": "https://github.com/ardhi/aneka/issues"
   },
   "standard": {
-    "env": [ "mocha" ]
+    "env": [
+      "mocha"
+    ]
   },
   "homepage": "https://github.com/ardhi/aneka#readme",
   "dependencies": {
@@ -37,6 +40,8 @@
   },
   "devDependencies": {
     "chai": "^6.2.1",
+    "clean-jsdoc-theme": "^4.3.0",
+    "jsdoc-plugin-intersection": "^1.0.4",
     "mocha": "^11.7.5"
   }
 }

@@ -1,3 +1,11 @@
+/**
+ * Extracts text between two boundary patterns.
+ *
+ * @param {string} text Source text.
+ * @param {string} patternStart Start marker.
+ * @param {string} patternEnd End marker.
+ * @returns {{result: string, pattern: string}} Extracted value and matched pattern.
+ */
 function extractText (text, patternStart, patternEnd) {
   let result = ''
   const open = text.indexOf(patternStart)

@@ -1,5 +1,12 @@
 import trim from 'lodash-es/trim.js'
 
+/**
+ * Reorders items by handling '^' (move to front) and '$' (move to end) prefixes.
+ *
+ * @param {Array<string>} inputs Source array.
+ * @param {boolean} [trimItem=true] Trim each item before processing.
+ * @returns {Array<string>} Reordered items.
+ */
 function arrangeArray (inputs = [], trimItem = true) {
   const first = []
   const last = []

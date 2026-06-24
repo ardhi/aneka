@@ -1,3 +1,10 @@
+/**
+ * Checks whether at least one matcher value exists in an array.
+ *
+ * @param {string|Array<string>} [matcher=[]] Single matcher or list of matchers.
+ * @param {Array<string>} [array=[]] Array to inspect.
+ * @returns {boolean} True when any matcher is found.
+ */
 function includes (matcher = [], array = []) {
   if (typeof matcher === 'string') matcher = [matcher]
   let found = false

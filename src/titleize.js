@@ -6,7 +6,17 @@ import concat from 'lodash-es/concat.js'
 import upperFirst from 'lodash-es/upperFirst.js'
 import generateId from './generate-id.js'
 
-function titleize (text = '', { ignores = [], replacement = {} } = {}) {
+/**
+ * Converts text to title case with optional ignore and replacement rules.
+ *
+ * @param {string} [text=''] Source text.
+ * @param {Object} [options={}] Transformation options.
+ * @param {Array<string>} [options.ignores=[]] Words that should remain unchanged.
+ * @param {Object<string, string>} [options.replacement={}] Exact token replacements.
+ * @returns {string} Titleized text.
+ */
+function titleize (text = '', options = {}) {
+  let { ignores = [], replacement = {} } = options
   const defIgnores = ['or', 'and', 'of', 'with']
   const replacer = {}
   forOwn(replacement, (v, k) => {
