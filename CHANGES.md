@@ -1,5 +1,9 @@
 # Changes
 
+## 2026-07-01
+
+- [0.16.0] Add ```getGlobalModuleDir()```
+
 ## 2026-06-24
 
 - [0.15.0] Add documentations & tests

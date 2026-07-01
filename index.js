@@ -32,6 +32,7 @@ import parseKvString from './src/parse-kv-string.js'
 import without from './src/without.js'
 import textToArray from './src/text-to-array.js'
 import getCallerFilename from './src/get-caller-filename.js'
+import getGlobalModuleDir from './src/get-global-module-dir.js'
 
 export {
   arrangeArray,
@@ -45,6 +46,7 @@ export {
   filterIndex,
   generateId,
   getCallerFilename,
+  getGlobalModuleDir,
   getIndex,
   getKeyByValue,
   includes,
@@ -83,6 +85,7 @@ export default {
   filterIndex,
   generateId,
   getCallerFilename,
+  getGlobalModuleDir,
   getIndex,
   getKeyByValue,
   includes,
