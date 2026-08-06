@@ -1,11 +1,13 @@
 /* eslint-env mocha */
 import { expect } from 'chai'
 import lockfile from '@bybrave/proper-lockfile2'
+import fs from 'fs-extra'
 import fn from '../src/set-interval.js'
 
 const originalSetTimeout = global.setTimeout
 const originalClearTimeout = global.clearTimeout
 const originalLock = lockfile.lock
+const originalEnsureFileSync = fs.ensureFileSync
 
 async function flushMicrotasks (turns = 6) {
   for (let index = 0; index < turns; index++) {
@@ -52,6 +54,7 @@ describe('setInterval', function () {
     global.setTimeout = originalSetTimeout
     global.clearTimeout = originalClearTimeout
     lockfile.lock = originalLock
+    fs.ensureFileSync = originalEnsureFileSync
   })
 
   it('returns a promise and schedules the first execution immediately', async function () {
@@ -133,6 +136,10 @@ describe('setInterval', function () {
   it('locks and releases around every iteration when a lock file is configured', async function () {
     const timers = installTimerQueue()
     const calls = []
+    const ensured = []
+    fs.ensureFileSync = lockFile => {
+      ensured.push(lockFile)
+    }
     lockfile.lock = async (lockFile, lockFileOpts) => {
       calls.push(['lock', lockFile, lockFileOpts])
       return async () => {
@@ -149,6 +156,10 @@ describe('setInterval', function () {
 
     await timers.drainAll()
 
+    expect(ensured).to.deep.equal([
+      '/tmp/aneka-set-interval.lock',
+      '/tmp/aneka-set-interval.lock'
+    ])
     expect(calls).to.deep.equal([
       ['lock', '/tmp/aneka-set-interval.lock', { stale: 2000 }],
       ['handler'],
@@ -162,6 +173,10 @@ describe('setInterval', function () {
   it('suppresses lock errors when silent is left at the default', async function () {
     const timers = installTimerQueue()
     const calls = []
+    const ensured = []
+    fs.ensureFileSync = lockFile => {
+      ensured.push(lockFile)
+    }
     lockfile.lock = async () => {
       throw new Error('lock failed')
     }
@@ -174,6 +189,7 @@ describe('setInterval', function () {
 
     await timers.drainAll()
 
+    expect(ensured).to.deep.equal(['/tmp/aneka-set-interval.lock'])
     expect(calls).to.deep.equal([])
     expect(timers.queue).to.have.length(0)
   })
