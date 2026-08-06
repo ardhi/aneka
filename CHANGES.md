@@ -7,6 +7,7 @@
 - [0.17.1] Add `runFirst` option to `setInterval()`
 - [0.17.2] Drop `runFirst` option from `setInterval()`
 - [0.17.4] Update documentations & tests
+- [0.17.5] Bug fix in `setInterval()`: Ensure lock file exists before acquiring lock
 
 ## 2026-07-01
 

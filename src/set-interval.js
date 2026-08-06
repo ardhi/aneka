@@ -1,5 +1,6 @@
 import lockfile from '@bybrave/proper-lockfile2'
 import parseDuration from './parse-duration.js'
+import fs from 'fs-extra'
 
 /**
  * Like original setInterval, but repeatedly executes a function after a specified delay asynchronously.
@@ -7,12 +8,13 @@ import parseDuration from './parse-duration.js'
  * Function handler will only be executed if the previous execution has completed. This prevents
  * overlapping executions.
  *
- * Optionally using a lock file.
+ * Optionally using a lock file. If it is provided and the lock file does not exist, it will be created.
+ * If the lock file exists and is locked, the handler will not be executed.
  *
  * @param {Function} handler The function to execute after the interval.
  * @param {number|string} timeout The delay in milliseconds or a duration string.
  * @param {Object} [options={}] Additional options.
- * @param {string} [options.lockFile] The path to the lock file. If set, the handler will only execute if the lock can be acquired.
+ * @param {string} [options.lockFile] The path to the lock file. If provided, the handler will only execute if the lock can be acquired.
  * @param {Array} [options.args=[]] Arguments to pass to the handler.
  * @param {Object} [options.lockFileOpts] Options for the lock file.
  * @param {boolean} [options.silent=true] If true, errors during lock acquisition will be ignored.
@@ -31,6 +33,7 @@ async function setInterval (handler, timeout, options = {}) {
       return
     }
     try {
+      fs.ensureFileSync(lockFile)
       const release = await lockfile.lock(lockFile, lockFileOpts)
       await handler.call(scope, ...args)
       await release()
