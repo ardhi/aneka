@@ -33,6 +33,8 @@ import without from './src/without.js'
 import textToArray from './src/text-to-array.js'
 import getCallerFilename from './src/get-caller-filename.js'
 import getGlobalModuleDir from './src/get-global-module-dir.js'
+import setTimeout from './src/set-timeout.js'
+import setInterval from './src/set-interval.js'
 
 export {
   arrangeArray,
@@ -67,6 +69,8 @@ export {
   round,
   secToHms,
   setImmediate,
+  setInterval,
+  setTimeout,
   shim,
   textToArray,
   titleize,
@@ -105,6 +109,9 @@ export default {
   resolvePath,
   round,
   secToHms,
+  setImmediate,
+  setTimeout,
+  setInterval,
   shim,
   textToArray,
   titleize,
