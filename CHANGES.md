@@ -6,6 +6,7 @@
 - [0.17.0] Add `setInterval()`
 - [0.17.1] Add `runFirst` option to `setInterval()`
 - [0.17.2] Drop `runFirst` option from `setInterval()`
+- [0.17.4] Update documentations & tests
 
 ## 2026-07-01
 

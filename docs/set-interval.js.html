@@ -20,11 +20,10 @@ import parseDuration from './parse-duration.js'
  * @param {boolean} [options.silent=true] If true, errors during lock acquisition will be ignored.
  * @param {number} [options.maxIterations=Infinity] Maximum number of times to execute the handler.
  * @param {Object} [options.scope] The scope to bind the handler to.
- * @param {boolean} [options.runFirst=false] If true, the handler will be executed immediately before the first interval.
  * @returns {Promise&lt;void>} Promise resolved after the interval.
  */
 async function setInterval (handler, timeout, options = {}) {
-  const { lockFile, args = [], lockFileOpts, silent = true, maxIterations = Infinity, scope, runFirst } = options
+  const { lockFile, args = [], lockFileOpts, silent = true, maxIterations = Infinity, scope } = options
   timeout = parseDuration(timeout)
   let iterations = 0
 
@@ -49,7 +48,6 @@ async function setInterval (handler, timeout, options = {}) {
     setTimeout(exec, timeout)
   }
 
-  if (runFirst) await execHandler()
   exec()
 }
 
