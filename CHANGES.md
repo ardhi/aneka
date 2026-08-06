@@ -3,7 +3,9 @@
 ## 2026-08-06
 
 - [0.17.0] Add `setTimeout()`
-- [0.17.1] Add `setInterval()`
+- [0.17.0] Add `setInterval()`
+- [0.17.1] Add `runFirst` option to `setInterval()`
+- [0.17.2] Drop `runFirst` option from `setInterval()`
 
 ## 2026-07-01
 
